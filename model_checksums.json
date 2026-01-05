@@ -1,0 +1,415 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-05T10:08:48.785171",
+    "total_models": 4,
+    "verified_models": 4,
+    "description": "XGBoost Models with Different Training Procedures",
+    "framework": "XGBoost",
+    "dataset_info": {
+      "name": "Credit Card Fraud Detection",
+      "path": "data/credit_card_transactions.csv",
+      "hash": "a9bca8927a185f4ebd5e731ee44a672bdaa5d3211907fafe9f709fdf1048f8a8",
+      "format": "CSV"
+    }
+  },
+  "models": [
+    {
+      "model_name": "Fraud_Detection_Standard",
+      "version": "1.0.0",
+      "hash": "ac0385ddaba5695112d5d20c1a28dc9a68108e95bcf96f5baea4e8bca48e3e1f",
+      "hash_algorithm": "sha256",
+      "file_path": "models/model_v1_standard_training.pkl",
+      "file_size_bytes": 290693,
+      "trained_at": "2026-01-05T10:08:48.774566",
+      "dataset": {
+        "source": "data/credit_card_transactions.csv",
+        "hash": "a9bca8927a185f4ebd5e731ee44a672bdaa5d3211907fafe9f709fdf1048f8a8",
+        "training_samples": 8000
+      },
+      "training_procedure": "Standard fit() - No preprocessing",
+      "hyperparameters": {
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "n_estimators": 100,
+        "objective": "binary:logistic"
+      },
+      "performance_metrics": {
+        "accuracy": 0.9855,
+        "auc_score": 0.9487755102040816
+      },
+      "sample_predictions": [
+        {
+          "sample_id": 385,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9968425631523132,
+          "probability_fraud": 0.0031574503518640995,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 35947.48592728505,
+            "Amount": 9.812812894220706,
+            "V1": -0.207361010015268,
+            "V2": -0.1092234581199099
+          }
+        },
+        {
+          "sample_id": 649,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9967357516288757,
+          "probability_fraud": 0.00326425489038229,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 55719.26921481176,
+            "Amount": 15.097046609642204,
+            "V1": 0.3207180420447431,
+            "V2": 0.3473389708674699
+          }
+        },
+        {
+          "sample_id": 1148,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9922361373901367,
+          "probability_fraud": 0.007763849105685949,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 161619.6265154789,
+            "Amount": 109.57878147968955,
+            "V1": -1.3782187035199711,
+            "V2": 0.712036459360953
+          }
+        },
+        {
+          "sample_id": 984,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.991195797920227,
+          "probability_fraud": 0.008804228156805038,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 66702.18548381173,
+            "Amount": 50.67357892687529,
+            "V1": 1.2270345970488723,
+            "V2": -1.580603940809169
+          }
+        },
+        {
+          "sample_id": 1275,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9938551187515259,
+          "probability_fraud": 0.0061448710039258,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 133286.19395928644,
+            "Amount": 133.47304215055811,
+            "V1": 1.0755000211306371,
+            "V2": 0.1215500827851543
+          }
+        }
+      ],
+      "verified": true
+    },
+    {
+      "model_name": "Fraud_Detection_EarlyStopping",
+      "version": "2.0.0",
+      "hash": "2aee78ce84c954d315426ed9563cc54b0c326bb1c323879d84619f3a8328ffac",
+      "hash_algorithm": "sha256",
+      "file_path": "models/model_v2_early_stopping.pkl",
+      "file_size_bytes": 417525,
+      "trained_at": "2026-01-05T10:08:48.777075",
+      "dataset": {
+        "source": "data/credit_card_transactions.csv",
+        "hash": "a9bca8927a185f4ebd5e731ee44a672bdaa5d3211907fafe9f709fdf1048f8a8",
+        "training_samples": 8000
+      },
+      "training_procedure": "Early stopping with validation monitoring",
+      "hyperparameters": {
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "n_estimators": 500,
+        "objective": "binary:logistic"
+      },
+      "performance_metrics": {
+        "accuracy": 0.987,
+        "auc_score": 0.9546938775510203
+      },
+      "sample_predictions": [
+        {
+          "sample_id": 1983,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9946795105934143,
+          "probability_fraud": 0.005320491269230843,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 95278.81825334235,
+            "Amount": 34.10666241928441,
+            "V1": -0.5831885868230609,
+            "V2": 1.4277235047826202
+          }
+        },
+        {
+          "sample_id": 120,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9984498620033264,
+          "probability_fraud": 0.0015501169255003333,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 89681.18502972065,
+            "Amount": 548.8170223421682,
+            "V1": -0.7047455009416888,
+            "V2": -0.521795922527623
+          }
+        },
+        {
+          "sample_id": 1610,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9995891451835632,
+          "probability_fraud": 0.0004108487337362021,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 10527.12955329838,
+            "Amount": 13.00177957856395,
+            "V1": -0.8750446944279707,
+            "V2": 1.3759084192989737
+          }
+        },
+        {
+          "sample_id": 753,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9998275637626648,
+          "probability_fraud": 0.00017242187459487468,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 167217.80646909235,
+            "Amount": 0.3505090956965476,
+            "V1": 0.9629041996564084,
+            "V2": 0.4927515820221371
+          }
+        },
+        {
+          "sample_id": 1837,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9997732639312744,
+          "probability_fraud": 0.00022675347281619906,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 123958.85733485266,
+            "Amount": 0.810379980699724,
+            "V1": -1.001314654197967,
+            "V2": -0.9221889054316276
+          }
+        }
+      ],
+      "verified": true,
+      "early_stopping_info": {
+        "best_iteration": 145,
+        "max_iterations": 500
+      }
+    },
+    {
+      "model_name": "Fraud_Detection_Scaled",
+      "version": "3.0.0",
+      "hash": "820a507c7312541a7f857cc6b3026e1590d068084309f6bca9d76887abade2c1",
+      "hash_algorithm": "sha256",
+      "file_path": "models/model_v3_scaled_features.pkl",
+      "file_size_bytes": 291501,
+      "trained_at": "2026-01-05T10:08:48.779470",
+      "dataset": {
+        "source": "data/credit_card_transactions.csv",
+        "hash": "a9bca8927a185f4ebd5e731ee44a672bdaa5d3211907fafe9f709fdf1048f8a8",
+        "training_samples": 8000
+      },
+      "training_procedure": "StandardScaler feature normalization",
+      "hyperparameters": {
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "n_estimators": 100,
+        "objective": "binary:logistic"
+      },
+      "performance_metrics": {
+        "accuracy": 0.9855,
+        "auc_score": 0.9487755102040816
+      },
+      "sample_predictions": [
+        {
+          "sample_id": 466,
+          "actual_class": 1,
+          "predicted_class": 1,
+          "probability_legitimate": 0.03547322750091553,
+          "probability_fraud": 0.9645267724990845,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 1.2829470317627616,
+            "Amount": -0.1396530986982875,
+            "V1": 4.225423023239218,
+            "V2": 0.7369050774455318
+          }
+        },
+        {
+          "sample_id": 1942,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9674942493438721,
+          "probability_fraud": 0.03250575065612793,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 1.2934050846335916,
+            "Amount": -0.16152625731668926,
+            "V1": -0.955733854501079,
+            "V2": 0.5850258233233574
+          }
+        },
+        {
+          "sample_id": 68,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9990983605384827,
+          "probability_fraud": 0.0009016426047310233,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": -1.3626671346864883,
+            "Amount": -0.15963001652318556,
+            "V1": -0.3746641469592834,
+            "V2": -0.6102515937203415
+          }
+        },
+        {
+          "sample_id": 1151,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9989595413208008,
+          "probability_fraud": 0.0010404740460217,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 1.6708031144899924,
+            "Amount": -0.15324108327457517,
+            "V1": -0.050661013284372274,
+            "V2": -1.7115347676620187
+          }
+        },
+        {
+          "sample_id": 659,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9983324408531189,
+          "probability_fraud": 0.0016675806837156415,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 1.4481221152190673,
+            "Amount": -0.16610517676136827,
+            "V1": 0.11201095230513046,
+            "V2": -2.280236817936126
+          }
+        }
+      ],
+      "verified": true,
+      "preprocessing": "StandardScaler (mean=0, std=1)"
+    },
+    {
+      "model_name": "Fraud_Detection_Weighted",
+      "version": "4.0.0",
+      "hash": "23bb3a91eb227b24e29e704521eee3ccde3d41f6df44ce5476a6828ef8efd893",
+      "hash_algorithm": "sha256",
+      "file_path": "models/model_v4_weighted_training.pkl",
+      "file_size_bytes": 257719,
+      "trained_at": "2026-01-05T10:08:48.782477",
+      "dataset": {
+        "source": "data/credit_card_transactions.csv",
+        "hash": "a9bca8927a185f4ebd5e731ee44a672bdaa5d3211907fafe9f709fdf1048f8a8",
+        "training_samples": 8000
+      },
+      "training_procedure": "Custom sample weights for imbalanced data",
+      "hyperparameters": {
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "n_estimators": 100,
+        "objective": "binary:logistic"
+      },
+      "performance_metrics": {
+        "accuracy": 0.9885,
+        "auc_score": 0.9510331632653062
+      },
+      "sample_predictions": [
+        {
+          "sample_id": 576,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9991690516471863,
+          "probability_fraud": 0.0008309345575980842,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 45718.9992548236,
+            "Amount": 95.94861508243882,
+            "V1": -0.7498877459418788,
+            "V2": -1.283262173674004
+          }
+        },
+        {
+          "sample_id": 97,
+          "actual_class": 1,
+          "predicted_class": 0,
+          "probability_legitimate": 0.8658554553985596,
+          "probability_fraud": 0.13414451479911804,
+          "correct_prediction": false,
+          "input_features": {
+            "Time": 42486.704539114646,
+            "Amount": 1649.5769064302535,
+            "V1": -1.5320192101829138,
+            "V2": 0.6683769231777895
+          }
+        },
+        {
+          "sample_id": 26,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9997013211250305,
+          "probability_fraud": 0.00029868344427086413,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 85923.42438143771,
+            "Amount": 102.42134812793486,
+            "V1": -0.0558964666135955,
+            "V2": -0.0785907959688194
+          }
+        },
+        {
+          "sample_id": 906,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.999573290348053,
+          "probability_fraud": 0.00042672903509810567,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 105531.04264722478,
+            "Amount": 14.514070599027509,
+            "V1": -0.7015656176624815,
+            "V2": 0.3511530726333191
+          }
+        },
+        {
+          "sample_id": 1741,
+          "actual_class": 0,
+          "predicted_class": 0,
+          "probability_legitimate": 0.9981261491775513,
+          "probability_fraud": 0.001873854547739029,
+          "correct_prediction": true,
+          "input_features": {
+            "Time": 24026.70076466015,
+            "Amount": 3.726873193341735,
+            "V1": -1.9186037747480504,
+            "V2": -0.104549550720216
+          }
+        }
+      ],
+      "verified": true,
+      "sample_weights_info": "Fraud=10.0, Legitimate=1.0"
+    }
+  ]
+}
